@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { RadioSelect } from 'shared';
+import { CheckBoxSelect } from 'shared';
 import './test.scss';
 
 interface ITestProp {}
@@ -10,7 +10,7 @@ export const Test = (props: ITestProp) => {
   return (
     <div>
       <div>组件测试路由</div>
-      <RadioSelect
+      <CheckBoxSelect
         className="test-input"
         label="名称"
         columns={[{

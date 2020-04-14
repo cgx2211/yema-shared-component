@@ -6,13 +6,14 @@ import {
   Input, Button, Table, Select,
 } from 'antd';
 
-import SelectDropdown from '../SelectDropdown';
 import '../index.scss';
+import './index.scss';
+import SelectDropdown from '../SelectDropdown';
 
 const { Search } = Input;
 type SizeType = 'small' | 'middle' | 'large' | undefined;
 
-interface IRadioSelect {
+interface ICheckBoxSelect {
   className?: string;
   loading?: boolean;
   disabled?: boolean;
@@ -34,7 +35,7 @@ interface IRadioSelect {
   onSelect?:Function;
 }
 
-const RadioSelect = (props: IRadioSelect) => {
+const CheckBoxSelect = (props: ICheckBoxSelect) => {
   const {
     dataSource, value, loading, columns, label, rowKey, placeholder, size, className, disabled,
     showArrow, suffixIcon,
@@ -105,32 +106,39 @@ const RadioSelect = (props: IRadioSelect) => {
           ok={ok}
           cancel={cancel}
         >
-          <div className="yema-select-keysearch">
-            <span className="yema-select-keysearch__label">{label}</span>
-            <Search onSearch={onSearch} loading={loading} />
-            <span className="yema-select-keysearch__control">
-              <Button
-                size="small"
-                type="primary"
-                onClick={onFresh}
-                icon={<SyncOutlined />}
+          <div className="yema-select-checkbox__dropdown">
+            <div className="yema-select-checkbox__dropdown-main">
+              <div className="yema-select-keysearch">
+                <span className="yema-select-keysearch__label">{label}</span>
+                <Search onSearch={onSearch} loading={loading} />
+                <span className="yema-select-keysearch__control">
+                  <Button
+                    size="small"
+                    type="primary"
+                    onClick={onFresh}
+                    icon={<SyncOutlined />}
+                  />
+                </span>
+              </div>
+              <Table
+                columns={columns}
+                dataSource={dataSource}
+                rowKey={rowKey}
+                rowSelection={{
+                  fixed: true,
+                  type: 'radio',
+                  onChange: onSelect,
+                }}
               />
-            </span>
+            </div>
+            <div className="yema-select-checkbox__dropdown-tags">
+              <span className="yema-select-keysearch__label">{label}</span>
+            </div>
           </div>
-          <Table
-            columns={columns}
-            dataSource={dataSource}
-            rowKey={rowKey}
-            rowSelection={{
-              fixed: true,
-              type: 'radio',
-              onChange: onSelect,
-            }}
-          />
         </SelectDropdown>
       )}
     />
   );
 };
 
-export default RadioSelect;
+export default CheckBoxSelect;

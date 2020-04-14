@@ -2,7 +2,7 @@
 import { ReactNode } from 'react';
 import './select.scss';
 declare type SizeType = 'small' | 'middle' | 'large' | undefined;
-interface IRadioSelect {
+interface ICheckBoxSelect {
   className?: string;
   loading?: boolean;
   disabled?: boolean;
@@ -23,5 +23,5 @@ interface IRadioSelect {
   onBlur?: Function;
   onSelect?:Function;
 }
-declare const RadioSelect: (props: IRadioSelect) => JSX.Element;
-export default RadioSelect;
+declare const CheckBoxSelect: (props: ICheckBoxSelect) => JSX.Element;
+export default CheckBoxSelect;
