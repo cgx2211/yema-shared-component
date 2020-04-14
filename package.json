@@ -17,15 +17,16 @@
     "typings"
   ],
   "scripts": {
-    "build": "node node_env.js && npm run lib && npm run es",
-    "down": "npm unpublish --force react-shared-component --registry http://localhost:4873",
-    "es": "babel src/shared  --extensions .ts,.tsx  --out-dir es/ && cpx \"src/shared/**/*.scss\" es",
-    "lib": "cross-env BABEL_OUTPUT=commonjs babel src/shared --extensions .ts,.tsx --out-dir lib/ && cpx \"src/shared/**/*.scss\" lib",
+    "build": "node node_env.js && npm run lib && npm run es && npm run typings",
+    "es": "babel src/shared  --extensions .ts,.tsx  --out-dir es/ && cpx \"src/shared/**/*.scss\" es && cpx \"src/shared/**/*.md\" es",
+    "lib": "cross-env BABEL_OUTPUT=commonjs babel src/shared --extensions .ts,.tsx --out-dir lib/ && cpx \"src/shared/**/*.scss\" lib && cpx \"src/shared/**/*.md\" lib",
+    "typings": "cpx \"src/shared/**/*.d.ts\" typings",
     "lint": "eslint --ext .ts --ext .tsx src/shared",
     "lint-fix": "eslint --fix --ext .ts --fix --ext .tsx src/shared",
     "start": "node scripts/start.js",
     "test": "node scripts/test.js",
-    "up": "npm run build && npm --access=public --registry http://localhost:4873 publish"
+    "up": "npm run build && npm --access=public --registry http://localhost:4873 publish",
+    "down": "npm unpublish --force yema-shared-component --registry http://localhost:4873"
   },
   "husky": {
     "hooks": {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import {
   SyncOutlined, CheckOutlined, CloseOutlined,
 } from '@ant-design/icons';
@@ -13,7 +13,10 @@ type SizeType = 'small' | 'middle' | 'large' | undefined;
 interface IRadiosSelect {
   className?: string;
   loading?: boolean;
+  disabled?: boolean;
+  showArrow?: boolean;
   placeholder?: string;
+  suffixIcon?: ReactNode;
   size?: SizeType;
   columns: Array<any>;
   rowKey: string;
@@ -24,11 +27,15 @@ interface IRadiosSelect {
   onFresh?: Function;
   onConfirm?: Function;
   onCancel?: Function;
+  onFocus?: Function;
+  onBlur?: Function;
+  onSelect?:Function;
 }
 
 const RadiosSelect = (props: IRadiosSelect) => {
   const {
-    dataSource, value, loading, columns, label, rowKey, placeholder, size, className,
+    dataSource, value, loading, columns, label, rowKey, placeholder, size, className, disabled,
+    showArrow, suffixIcon,
   } = props;
 
   const [open, isOpen] = useState(false);
@@ -63,14 +70,30 @@ const RadiosSelect = (props: IRadiosSelect) => {
       props.onCancel();
     }
   };
+  const onFocus = (v) => {
+    isOpen(true);
+    if (props.onFocus) { props.onFocus(v); }
+  };
+  const onBlur = (v) => {
+    isOpen(false || focus);
+    if (props.onBlur) { props.onBlur(v); }
+  };
+  const onSelect = (selectedRowKeys, selectedRows) => {
+    setSelectedRow(selectedRows);
+    if (props.onSelect) { props.onSelect(selectedRows[0]); }
+  };
+
   return (
     <Select
       className={className}
+      disabled={disabled}
+      showArrow={showArrow}
+      suffixIcon={suffixIcon}
       value={value}
       ref={selectRef}
       open={open}
-      onFocus={() => isOpen(true)}
-      onBlur={() => isOpen(false || focus)}
+      onFocus={onFocus}
+      onBlur={onBlur}
       placeholder={placeholder}
       size={size}
       dropdownRender={() => (
@@ -98,9 +121,7 @@ const RadiosSelect = (props: IRadiosSelect) => {
             rowSelection={{
               fixed: true,
               type: 'radio',
-              onChange: (selectedRowKeys, selectedRows) => {
-                setSelectedRow(selectedRows);
-              },
+              onChange: onSelect,
             }}
           />
           <div className="radio-select-keysearch__footer">

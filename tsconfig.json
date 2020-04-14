@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "outDir": "./typings",
+    "outDir": "./tmp",
     "lib": [
       "dom",
       "dom.iterable",
@@ -11,14 +11,12 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
     "jsx": "react",
     "baseUrl": "src",
   },

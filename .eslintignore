@@ -1,5 +1,6 @@
-src/setupTests.ts
+*.d.ts
 *.test.js
+src/setupTests.ts
 src/assets/*
 lib/*
 es/*
