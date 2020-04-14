@@ -1,4 +1,41 @@
-.test-input {
-  width: 501px;
-  margin: 50px;
+.app-container {
+  padding: 24px;
+  display: flex;
+  .app-menus {
+    width: 180px;
+    margin-right: 16px;
+  }
+  .component-container {
+    flex: 1;
+  }
+}
+
+table {
+  th {
+    text-align: left;
+    padding: 4px;
+    border-bottom: 2px solid #DCDFE6;
+  }
+  td {
+    text-align: left;
+    padding: 4px;
+    border-bottom: 1px solid #DCDFE6;
+  }
+}
+h1 {
+  font-size: 30px;
+  line-height: 38px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+h3 {
+  font-size: 20px;
+  line-height: 28px;
+}
+li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

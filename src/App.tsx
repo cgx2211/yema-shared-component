@@ -1,32 +1,45 @@
-import React, { useState } from 'react';
-import { RadioSelect } from 'shared';
+import React from 'react';
+import {
+  Router, Route, Switch, Link,
+} from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import './App.scss';
+import AppRoutes from './routes';
 
-const App: React.FC = (props) => {
-  const [value, setValue] = useState('');
-  return (
-    <div>
-      <h1>组件展示</h1>
-      <RadioSelect
-        className="test-input"
-        label="名称"
-        columns={[{
-          title: '招标计划名称',
-          dataIndex: 'tenderPlanName',
-        }, {
-          title: '编号',
-          dataIndex: 'tenderPlanCode',
-        }]}
-        rowKey="tenderPlanCode"
-        value={value}
-        dataSource={[
-          { tenderPlanName: 'typescript', tenderPlanCode: 1 },
-          { tenderPlanName: 'javascript', tenderPlanCode: 2 },
-        ]}
-        onConfirm={(e) => setValue(e.tenderPlanName)}
-      />
-    </div>
-  );
-};
+const history = createBrowserHistory();
+
+const components = [
+  { path: 'yematech', type: 'Select', name: 'RadioSelect' },
+];
+const App: React.FC = (props) => (
+  <Router history={history}>
+    <Switch>
+      <Route path="">
+        <div className="app-container">
+          <ul className="app-menus">
+            <li>
+              <Link to="/test">组件测试</Link>
+            </li>
+            <li>------------------------------------</li>
+            {
+              components.map((component) => (
+                <li key={component.name}>
+                  <Link
+                    to={`/${component.path}/${component.type}/${component.name}`}
+                  >
+                    {component.name}
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
+          <div className="component-container">
+            <AppRoutes />
+          </div>
+        </div>
+      </Route>
+    </Switch>
+  </Router>
+);
 
 export default App;
