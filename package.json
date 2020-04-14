@@ -10,10 +10,11 @@
   "author": "zhiping.li",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "typings": "lib/index.d.ts",
+  "typings": "typings/index.d.ts",
   "files": [
     "es",
-    "lib"
+    "lib",
+    "typings"
   ],
   "scripts": {
     "build": "node node_env.js && npm run lib && npm run es",

@@ -1,2 +1,2 @@
 /* eslint-disable */
-export { default as RadioSelect } from './RadioSelect';
+export { default as RadioSelect } from './yematech/Select/RadioSelect';
