@@ -1,6 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+import React, { useState } from 'react';
 import { Select } from 'shared';
 import './test.scss';
 
@@ -9,12 +8,11 @@ interface ITestProp {}
 export const Test = (props: ITestProp) => {
   const [value, setValue] = useState(['重庆永行1']);
   const [selectedRowKeys, setSelectRowKeys] = useState([1]);
-  const [dataSource, setDataSource] = useState([] as any);
-  useEffect(() => {
-    Axios.get('sharedComponent/test').then((result) => {
-      setDataSource(result.data);
-    });
-  }, []);
+  const dataSource = [
+    { tenderPlanName: '重庆永行1', tenderPlanCode: 1 },
+    { tenderPlanName: '重庆永行2', tenderPlanCode: 2 },
+  ];
+
   return (
     <div>
       <div>组件测试路由</div>
@@ -35,9 +33,6 @@ export const Test = (props: ITestProp) => {
         onSelectChange={(keys) => setSelectRowKeys(keys)}
         value={value}
         dataSource={dataSource}
-        pagination={{
-          total: 100,
-        }}
         onConfirm={(e) => setValue(e.map((o) => o.tenderPlanName))}
       />
     </div>
