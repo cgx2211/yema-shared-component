@@ -194,5 +194,6 @@
     "node-sass": "^4.13.1",
     "raw-loader": "^4.0.0",
     "rmdir-promise": "^1.0.0"
-  }
+  },
+  "proxy": "http://localhost:3002"
 }

@@ -1,1 +1,1 @@
-export { default as RadioSelect } from './yematech/Select/RadioSelect';
+export { default as Select } from './yematech/Select';
