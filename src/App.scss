@@ -7,16 +7,18 @@
   }
 }
 
-table {
-  th {
-    text-align: left;
-    padding: 4px;
-    border-bottom: 2px solid #DCDFE6;
-  }
-  td {
-    text-align: left;
-    padding: 4px;
-    border-bottom: 1px solid #DCDFE6;
+.markdown-table {
+  table {
+    th {
+      text-align: left;
+      padding: 4px;
+      border-bottom: 2px solid #DCDFE6;
+    }
+    td {
+      text-align: left;
+      padding: 4px;
+      border-bottom: 1px solid #DCDFE6;
+    }
   }
 }
 h1 {
@@ -31,8 +33,10 @@ h3 {
   font-size: 20px;
   line-height: 28px;
 }
-li {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.app-menus {
+  li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

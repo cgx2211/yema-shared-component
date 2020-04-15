@@ -35,11 +35,11 @@
 | className | 下拉菜单的 className 属性 | string | - |  |
 | mode | 设置 Select 的模式为多选或单选 | string | - |  |
 | columns | 表格的 columns 属性 | Array | - |  |
-| rowKey | 表格的 rowKey 属性  | string | - |  |
+| rowKey | 表格的 rowKey 属性 | string | - |  |
 | rowValue | row value 的属性名 | string | - |  |
-| dataSource | 表格的 dataSource 属性  | Array | - |  |
-| selectedRowKeys | 指定选中项的 key 数组，需要和 onSelectChange 进行配合  | `Array<string>` | - |  |
-| label | 查询框的 label 属性  | string | - |  |
+| dataSource | 表格的 dataSource 属性 | Array | - |  |
+| selectedRowKeys | 指定选中项的 key 数组，需要和 onSelectChange 进行配合 | `Array<string>` | - |  |
+| label | 查询框的 label 属性 | string | - |  |
 | disabled | 是否禁用 | boolean | false |  |
 | placeholder | 选择框默认文字 | string | - |  |
 | showArrow | 是否显示下拉小箭头 | boolean | true |  |
