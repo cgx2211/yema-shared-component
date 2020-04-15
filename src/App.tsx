@@ -9,8 +9,7 @@ import AppRoutes from './routes';
 const history = createBrowserHistory();
 
 const components = [
-  { path: 'yematech', type: 'Select', name: 'RadioSelect' },
-  { path: 'yematech', type: 'Select', name: 'SelectDropdown' },
+  { path: 'yematech', type: 'Select', name: 'Select' },
 ];
 const App: React.FC = (props) => (
   <Router history={history}>

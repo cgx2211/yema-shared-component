@@ -40,3 +40,10 @@
     }
   }
 }
+
+.yema-select-checkbox__dropdown {
+  display: flex;
+  .yema-select-checkbox__dropdown-main {
+    flex: 1;
+  }
+}

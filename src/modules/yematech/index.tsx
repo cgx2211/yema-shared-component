@@ -6,8 +6,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import monokaiSublime from 'react-syntax-highlighter/dist/esm/styles/hljs/monokai-sublime';
 
 // README
-import RadioSelect from 'shared/yematech/Select/RadioSelect/README.md';
-import SelectDropdown from 'shared/yematech/Select/SelectDropdown/README.md';
+import Select from 'shared/yematech/Select/README.md';
 
 const rootEl = (props) => {
   const { value } = props;
@@ -34,11 +33,8 @@ export const Home = (props: IHomeProp) => {
       switch (match.params.type) {
         case 'Select':
           switch (match.params.component) {
-            case 'RadioSelect':
-              setSource(RadioSelect);
-              break;
-            case 'SelectDropdown':
-              setSource(SelectDropdown);
+            case 'Select':
+              setSource(Select);
               break;
             default:
               break;
