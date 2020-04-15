@@ -46,7 +46,7 @@
 | size | 选择框大小，可选 `large` `small` | string | default |  |
 | pagination | 分页器，参考 antd 的 pagination 文档 |  |
 | suffixIcon | 自定义的选择框后缀图标 | ReactNode | - |  |
-| value | 指定当前选中的条目 | string\|number\|Array | - |  |
+| value | 指定当前选中的条目 | string \|number \| `Array<any>` | - |  |
 | onBlur | 失去焦点时回调 | function | - |  |
 | onFocus | 获得焦点时回调 | function | - |  |
 | onSearch | 文本框按下回车或点击搜索按钮时回调 | function(value: string) | - |  |
