@@ -35,6 +35,9 @@ export const Test = (props: ITestProp) => {
         onSelectChange={(keys) => setSelectRowKeys(keys)}
         value={value}
         dataSource={dataSource}
+        pagination={{
+          total: 100,
+        }}
         onConfirm={(e) => setValue(e.map((o) => o.tenderPlanName))}
       />
     </div>

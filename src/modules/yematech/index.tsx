@@ -48,6 +48,7 @@ export const Home = (props: IHomeProp) => {
   return (
     <div>
       <ReactMarkdown
+        className="markdown-table"
         source={source}
         renderers={{
           code: rootEl,
