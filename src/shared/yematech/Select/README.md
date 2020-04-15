@@ -38,15 +38,15 @@
 | rowKey | 表格的 rowKey 属性 | string | - |  |
 | rowValue | row value 的属性名 | string | - |  |
 | dataSource | 表格的 dataSource 属性 | Array | - |  |
-| selectedRowKeys | 指定选中项的 key 数组，需要和 onSelectChange 进行配合 | `Array<string>` | - |  |
+| selectedRowKeys | 指定选中项的 key 数组，需要和 onSelectChange 进行配合 | Array&lt;string> | - |  |
 | label | 查询框的 label 属性 | string | - |  |
 | disabled | 是否禁用 | boolean | false |  |
 | placeholder | 选择框默认文字 | string | - |  |
 | showArrow | 是否显示下拉小箭头 | boolean | true |  |
 | size | 选择框大小，可选 `large` `small` | string | default |  |
-| pagination | 分页器，参考 antd 的 pagination 文档 |  |
+| pagination | 分页器，参考 antd 的 pagination 文档 | object |
 | suffixIcon | 自定义的选择框后缀图标 | ReactNode | - |  |
-| value | 指定当前选中的条目 | string \|number \| `Array<any>` | - |  |
+| value | 指定当前选中的条目 | string \| number \| Array&lt;any> | - |  |
 | onBlur | 失去焦点时回调 | function | - |  |
 | onFocus | 获得焦点时回调 | function | - |  |
 | onSearch | 文本框按下回车或点击搜索按钮时回调 | function(value: string) | - |  |
