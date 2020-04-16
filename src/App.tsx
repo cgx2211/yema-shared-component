@@ -20,7 +20,7 @@ const App: React.FC = (props) => (
             <li>
               <Link to="/test">组件测试</Link>
             </li>
-            <li>------------------------------------</li>
+            <li><hr /></li>
             {
               components.map((component) => (
                 <li key={component.name}>
