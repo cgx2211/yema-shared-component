@@ -40,7 +40,9 @@ PS：后续公共组件目录会创建与业务相关的组件目录
 目前组件库项目基于 antd 创建，暂不支持按需加载 CSS 文件，需要在应用的项目中全局引入 antd 的所有样式。
 ```javascript
 // src/index.tsx
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.less';
+// 这种方式已经载入了所有组件的样式，无法按需加载插件 babel-plugin-import 的 style 属性一起使用
+// 请删除对应 .babelrc 里面的 [ "import", { "libraryName": "antd", "style": "css" } ] 配置
 ```
 
 ## 讨论：什么样的组件可以抽取
