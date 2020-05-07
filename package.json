@@ -2,6 +2,10 @@
   "name": "yema-shared-component",
   "version": "1.0.0",
   "description": "野马react组件开发脚手架",
+  "homepage": "http://git.hxyc.smarte.tech:50000/lizhiping/yema-shared-component",
+  "bugs": {
+    "url": "http://git.hxyc.smarte.tech:50000/lizhiping/yema-shared-component/issues"
+  },
   "repository": {
     "type": "git",
     "url": "http://git.hxyc.smarte.tech:50000/lizhiping/yema-shared-component.git"
