@@ -29,8 +29,8 @@
     "lint-fix": "eslint --fix --ext .ts --fix --ext .tsx src/shared",
     "start": "node scripts/start.js",
     "test": "node scripts/test.js",
-    "up": "npm run build && npm --access=public --registry http://localhost:4873 publish",
-    "down": "npm unpublish --force yema-shared-component --registry http://localhost:4873"
+    "up": "npm run build && npm --access=public --registry http://npm.yematech.cn publish",
+    "down": "npm unpublish --force yema-shared-component --registry http://npm.yematech.cn"
   },
   "husky": {
     "hooks": {
