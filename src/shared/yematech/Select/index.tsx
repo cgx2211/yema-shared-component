@@ -7,8 +7,8 @@ import {
 } from 'antd';
 
 import { ISelect } from './index.d';
-import './index.scss';
-import SelectDropdown from './SelectDropdown';
+import SelectDropdown from './select-dropdown';
+import styles from './index.module.scss';
 
 const { Search } = Input;
 
@@ -99,14 +99,14 @@ const YemaSelect = (props: ISelect) => {
           ok={ok}
           cancel={cancel}
         >
-          <div className="yema-select-checkbox__dropdown">
-            <div className="yema-select-checkbox__dropdown-main">
-              <div className="yema-select-keysearch">
-                <span className="yema-select-keysearch__label">{label}</span>
+          <div className={styles.dropdown}>
+            <div className={styles['dropdown-content']}>
+              <div className={styles.keysearch}>
+                <span className={styles['keysearch-label']}>{label}</span>
                 <Search onSearch={onSearch} loading={loading} />
                 {
                   props.onFresh ? (
-                    <span className="yema-select-keysearch__control">
+                    <span className={styles['keysearch-control']}>
                       <Button
                         size="small"
                         type="primary"

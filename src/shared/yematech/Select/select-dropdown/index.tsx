@@ -1,17 +1,11 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Button } from 'antd';
 import {
   CheckOutlined, CloseOutlined,
 } from '@ant-design/icons';
 
-interface ISelectDropdown {
-  className?: string;
-  children?: ReactNode;
-  onMouseEnter?: Function;
-  onMouseLeave?: Function;
-  ok?: Function;
-  cancel?: Function;
-}
+import { ISelectDropdown } from './index.d';
+import styles from './index.module.scss';
 
 const SelectDropdown = (props:ISelectDropdown) => {
   const { children } = props;
@@ -29,12 +23,12 @@ const SelectDropdown = (props:ISelectDropdown) => {
   };
   return (
     <div
-      className="yema-select"
+      className={styles.content}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       {children}
-      <div className="yema-select-keysearch__footer">
+      <div className={styles['keysearch-footer']}>
         <Button
           size="small"
           onClick={ok}
@@ -44,7 +38,7 @@ const SelectDropdown = (props:ISelectDropdown) => {
           确定
         </Button>
         <Button
-          className="mgl-8"
+          className={styles['mgl-8']}
           size="small"
           onClick={cancel}
           icon={<CloseOutlined />}

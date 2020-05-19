@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import { ReactNode } from 'react';
 
-interface ISelectDropdown {
+export interface ISelectDropdown {
   className?: string;
   children?: ReactNode;
   onMouseEnter?: Function;

@@ -1,0 +1,29 @@
+@import '../../scss/variables.module';
+
+.keysearch {
+  display: flex;
+  background-color: $odd-backgroud;
+  padding: 8px;
+  border-bottom: 1px solid $first-border;
+  .keysearch-label {
+    white-space: nowrap;
+    margin: auto 8px auto 0;
+  }
+  input {
+    flex: 1;
+  }
+  .keysearch-control {
+    display: flex;
+    margin: auto;
+    .ant-btn {
+      margin-left: 8px;
+    }
+  }
+}
+
+.dropdown {
+  display: flex;
+  .dropdown-content {
+    flex: 1;
+  }
+}
