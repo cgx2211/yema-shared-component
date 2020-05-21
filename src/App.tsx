@@ -10,6 +10,7 @@ const history = createBrowserHistory();
 
 const components = [
   { path: 'yematech', type: 'Select', name: 'Select' },
+  { path: 'yematech', type: 'Drawer', name: 'Drawer' },
 ];
 const App: React.FC = (props) => (
   <Router history={history}>

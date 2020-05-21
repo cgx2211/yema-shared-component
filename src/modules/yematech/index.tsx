@@ -7,6 +7,7 @@ import monokaiSublime from 'react-syntax-highlighter/dist/esm/styles/hljs/monoka
 
 // README
 import Select from 'shared/yematech/Select/README.md';
+import Drawer from 'shared/yematech/YemaDrawer/README.md';
 
 const rootEl = (props) => {
   const { value } = props;
@@ -35,6 +36,15 @@ export const Home = (props: IHomeProp) => {
           switch (match.params.component) {
             case 'Select':
               setSource(Select);
+              break;
+            default:
+              break;
+          }
+          break;
+        case 'Drawer':
+          switch (match.params.component) {
+            case 'Drawer':
+              setSource(Drawer);
               break;
             default:
               break;

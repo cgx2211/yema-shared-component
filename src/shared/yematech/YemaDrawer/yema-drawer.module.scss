@@ -1,0 +1,15 @@
+button.drawer-btn{
+    padding: 5px 4px;
+    vertical-align: middle;
+    border:0px none;
+    background-color:transparent;
+    color:white;
+    &:hover{
+        color:white;
+        background-color:transparent;
+    }
+    &:focus{
+        color:white;
+        background-color:transparent;
+    }
+}

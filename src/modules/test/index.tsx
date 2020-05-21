@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Select } from 'shared';
+import { Select, YemaDrawer } from 'shared';
 import './test.scss';
 import { Radio } from 'antd';
 
@@ -22,34 +22,37 @@ export const Test = (props: ITestProp) => {
   return (
     <div>
       <div>组件测试路由</div>
-      <Radio.Group
-        options={[
-          { label: '单选' as any, value: undefined },
-          { label: '多选' as any, value: 'multiple' },
-        ]}
-        onChange={handleOnChange}
-        value={mode}
-      />
-      <Select
-        mode={mode}
-        className="test-input"
-        placeholder="请选择"
-        label="名称"
-        columns={[{
-          title: '招标计划名称',
-          dataIndex: 'tenderPlanName',
-        }, {
-          title: '编号',
-          dataIndex: 'tenderPlanCode',
-        }]}
-        rowKey="tenderPlanCode"
-        rowValue="tenderPlanName"
-        selectedRowKeys={selectedRowKeys}
-        onSelectChange={(keys) => setSelectRowKeys(keys)}
-        value={value}
-        dataSource={dataSource}
-        onConfirm={(e) => setValue(e.map((o) => o.tenderPlanName))}
-      />
+      <div>
+        <Radio.Group
+          options={[
+            { label: '单选' as any, value: undefined },
+            { label: '多选' as any, value: 'multiple' },
+          ]}
+          onChange={handleOnChange}
+          value={mode}
+        />
+        <Select
+          mode={mode}
+          className="test-input"
+          placeholder="请选择"
+          label="名称"
+          columns={[{
+            title: '招标计划名称',
+            dataIndex: 'tenderPlanName',
+          }, {
+            title: '编号',
+            dataIndex: 'tenderPlanCode',
+          }]}
+          rowKey="tenderPlanCode"
+          rowValue="tenderPlanName"
+          selectedRowKeys={selectedRowKeys}
+          onSelectChange={(keys) => setSelectRowKeys(keys)}
+          value={value}
+          dataSource={dataSource}
+          onConfirm={(e) => setValue(e.map((o) => o.tenderPlanName))}
+        />
+      </div>
+      <YemaDrawer />
     </div>
   );
 };
