@@ -6,13 +6,13 @@ import {
   PicLeftOutlined, AppstoreOutlined,
 } from '@ant-design/icons';
 import { IYemaDrawerProp } from './index.d';
-import './yema-drawer.module.scss';
+import styles from './yema-drawer.module.scss';
 
 export const YemaDrawer = (props: IYemaDrawerProp) => {
   const { appList } = props;
   const [showDrawer, setshowDrawer] = useState(false);
   const [showList, setshowList] = useState([
-    { name: '供应商初审', url: `${window.location.origin}/platform` },
+    { name: '供应商管理', url: `${window.location.origin}/platform` },
     { name: '物料管理', url: `${window.location.origin}/material` },
   ]);
 
@@ -33,7 +33,7 @@ export const YemaDrawer = (props: IYemaDrawerProp) => {
   return (
     <>
       <Button
-        className="drawer-btn"
+        className={styles.drawerbtn}
         size="large"
         onClick={() => { setshowDrawer(true); }}
       >
